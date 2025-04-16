@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chakkip.lol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            line-height: 1.6;
+            color: white;
+            background: url(bg.png) no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+        main {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0.2em 0;
+            color: #FFA500;
+        }
+        p {
+            text-align: center;
+        }
+        .body-bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .body-bottom a, .body-bottom button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 20px;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, border-color 0.3s, color 0.3s;
+            border: 2px solid #FFA500;
+            cursor: pointer;
+            line-height: 1.2;
+            box-sizing: border-box;
+            margin: 5px 0;
+            width: 200px;
+        }
+        .body-bottom a:hover, .body-bottom button:hover {
+            background: rgba(255, 69, 0, 0.1);
+            border-color: #FFA500;
+            color: #FFA500;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 20px;
+            background: black;
+            color: white;
+            border: 2px solid white;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            line-height: 1.2;
+            box-sizing: border-box;
+            width: 200px;
+        }
+        .copy-btn:hover {
+            color: #FFA500;
+            border-color: #FFA500;
+            background: black;
+        }
+        @media (min-width: 601px) {
+            main {
+                padding: 30px;
+            }
+            .body-bottom a, .body-bottom button, .copy-btn {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>CHAKKIP.LOL</h1>
+        <h2>Welcome to chakkip.lol</h2>
+        <p>thats so skibidi.</p>
+        <p>thats so skibidi.</p>
+        <p>we have skibidi toilet.</p>
+        <p>Feel free to sybau.</p>
+        <p>Want to get in touch? ts pmo.</p>
+        <div class="body-bottom">
+            <a href=main.html class="button" target="_self" rel="noopener noreferrer" aria-label="Go home">Back</a>
+        </div>
+    </main>
+    <footer>
+        <button class="copy-btn" data-name="chakkip.lol">Server IP</button>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    navigator.clipboard.writeText(name)
+                        .then(() => {
+                            console.log('Copied to clipboard:', name);
+                            btn.textContent = 'Copied!';
+                            setTimeout(() => btn.textContent = 'Server IP', 2000);
+                        })
+                        .catch(err => console.error('Could not copy text: ', err));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
